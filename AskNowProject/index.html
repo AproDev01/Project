@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Request</title>
-    <link rel="stylesheet" href="style.css">
-   <link rel="webwsite icon"  type=" "  href="Img.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Support</title>
+  <link rel="icon" type="image/png" href="Img.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="BoxCommunication">
-    <form action="https://api.web3forms.com/submit" method="POST" class="Contact-left">
-        <div class="ContactLeft-Title">
-            <h2>Contact Us</h2><hr>
-        </div>
-        <input type="hidden" name="access_key" value="c6128537-f079-4c31-a9c8-2b9bb316983a">
-        <input type="text" name="name" placeholder="Your Name" class="ContactInput" required>
-        <input type="email" name="email" placeholder="Your Email" class="ContactInput" required>
-         <textarea name="message" placeholder="Your Message" class="ContactInput" required></textarea>
-         <button type="submit">Submit <ion-icon name="arrow-forward-outline"></ion-icon></button>
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>Contact Us</h2>
+      <hr />
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="c6128537-f079-4c31-a9c8-2b9bb316983a" />
+
+      <input type="text" name="name" placeholder="Your Name" class="form-input" required />
+      <input type="email" name="email" placeholder="Your Email" class="form-input" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">
+        Send Message
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </button>
     </form>
-   </div>
-   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

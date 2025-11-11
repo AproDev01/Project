@@ -1,83 +1,107 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family:'Outfit' ;
-    background: linear-gradient(white,white);
-    background: url(img.jpg) no-repeat;
-}
-.BoxCommunication{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;  
-}
-.Contact-left{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-    background: transparent;
-   
-}
-.ContactLeft-Title h2{
- font-weight:   600;
- color: rgb(8, 8, 8);
- font-size: 40px;
- margin-bottom:5px ;
-}
-.ContactLeft-Title hr{
-    border: none;
-    width: 120px;
-    height: 5px;
-    background-color: rgb(161, 151, 151);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-.ContactInput{
-    width: 400px;
-    height: 50px;
-    border: none;
-    outline: none;
-    padding-left: 25px;
-    font-weight: 500;
-    color: darkgray;
-    border-radius: 50px;
 
-}
-.Contact-left textarea{
-    height: 140px;
-    padding-top:15px ;
-    border-radius: 20px;
-}
-.ContactInput:focus{
-    border: 2px solid blue;
-  
-}
-.ContactInput::placeholder{
-    color: rgb(164, 165, 165);
-}
-.Contact-left button{
-    display: flex;
-    align-items: center;
-    padding: 15px 30px;
-    font-size: 16px;
-    color: rgb(18, 18, 19);
-    gap: 10px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(270deg,rgb(121, 121, 247),rgb(69, 69, 248));
-    cursor: pointer;
-
-    
-}
-@media (max-width:800px) {
-
-    .ContactInput{
-        width: 80vw;
-
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    
-}
+
+    body {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contact-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 40px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-header h2 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .contact-header hr {
+      width: 60px;
+      margin: 10px auto;
+      border: 2px solid #fff;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+
+    .form-input:focus, textarea:focus {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    button {
+      background: #00c6ff;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+    }
+
+    ion-icon {
+      font-size: 18px;
+    }
+
+    @media (max-width: 500px) {
+      .contact-container {
+        padding: 25px;
+      }
+
+      .contact-header h2 {
+        font-size: 24px;
+      }
+    }
+ 
