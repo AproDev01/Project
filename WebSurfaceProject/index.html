@@ -1,66 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>Website</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PageWeb | Modern Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-  <div class="main">
-    <div class="navbar">
-
-      <div class="icon">
-        <h2 class="logo">PageWeb</h2>
-      </div>
-
-      <div class="menu">
-        <ul>
-          <li> <a href="#">  Home <i class="fa fa-house"></i> </a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">service</a></li>
-          <li><a href="#"> contact <i class="fa fa-phone"></i></a></li>
-        </ul>
-      </div>
-
-      <div class="search">
-        <input type="search" class="srch" name="" placeholder="Type to text">
-        <a href="#"><button class="btn">search</button></a>
-      </div>
-
+  <header class="navbar">
+    <div class="logo">PageWeb</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#"><ion-icon name="call-outline"></ion-icon> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Search..." />
+      <button><ion-icon name="search-outline"></ion-icon></button>
     </div>
-    <div class="content">
-        <h1>web design <br>
-        <span>Develepement</span><br>
-             Course</h1>
-        <p class="par"> welcomen to page</p>
-        <button class="cn"><a href="#">Joint us</a></button>
+  </header>
 
-      <div class="form">
-        <h2>Login Here</h2>
-        <input type="email" name="email" placeholder="Enter Email Here">
-        <input type="password" name="" placeholder="Enter password Here">
-        <button class="btnn"><a href="#">Login</a></button>
-        <p class="link">Dont't have an account <br>
-        <a href="#">Sign up </a> here</a>
-        </p>
-        <p class="liw">Log in with</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Web Design & <span>Development</span></h1>
+      <p>Welcome to your professional web design course. Learn, build, and grow your skills.</p>
+      <button class="btn-primary">Join Us</button>
+    </div>
 
-        <div class="icon">
+    <div class="login-card">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <input type="password" placeholder="Enter your password" required />
+        <button type="submit" class="btn-login">Login</button>
+        <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
+      </form>
+
+      <div class="social-login">
+        <p>Or login with</p>
+        <div class="social-icons">
           <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
           <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
           <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-
         </div>
-
       </div>
-
     </div>
-
-  </div>
-
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </section>
 </body>
 </html>

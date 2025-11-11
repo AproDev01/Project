@@ -1,141 +1,111 @@
-const question= [
-    {
-        question:"Which is larget animal in the world?",
-        answers:[
-            
-                {text:"Shark",correct:false},
-                {text:"Blue Whale",correct:true},
-
-                {text:"Elephant",correct:false},
-
-                {text:"Giraffe",correct:false},
-
-            
-        ]
-    },
-    {
-        question:"Which is the smallest country in the world?",
-        answers:[
-            
-                {text:"Vatican City",correct:true},
-                {text:"Bhutan",correct:false},
-
-                {text:"Nepal",correct:false},
-
-                {text:"Shri Lanka",correct:false},
-
-            
-        ]
-    },
-    {
-        question:"Which is the largest desert in the world?",
-        answers:[
-            
-                {text:"Kalahari",correct:false},
-                {text:"Gobi",correct:false},
-
-                {text:"Sahara",correct:false},
-
-                {text:"Antarctica",correct:true},
-
-            
-        ]
-    },
-    {
-        question:"Which is the smallest continent in the world?",
-        answers:[
-            
-                {text:"Asia",correct:false},
-                {text:"Australia",correct:true},
-
-                {text:"Arctic",correct:false},
-
-                {text:"Africa",correct:false},
-
-            
-        ]
-    },
-    
+const questions = [
+  {
+    question: "Quel est le plus grand animal du monde ?",
+    answers: [
+      { text: "Requin", correct: false },
+      { text: "Baleine bleue", correct: true },
+      { text: "Éléphant", correct: false },
+      { text: "Girafe", correct: false },
+    ],
+  },
+  {
+    question: "Quel est le plus petit pays du monde ?",
+    answers: [
+      { text: "Bhoutan", correct: false },
+      { text: "Népal", correct: false },
+      { text: "Vatican", correct: true },
+      { text: "Sri Lanka", correct: false },
+    ],
+  },
+  {
+    question: "Quel est le plus grand désert du monde ?",
+    answers: [
+      { text: "Sahara", correct: false },
+      { text: "Antarctique", correct: true },
+      { text: "Gobi", correct: false },
+      { text: "Kalahari", correct: false },
+    ],
+  },
+  {
+    question: "Quel est le plus petit continent ?",
+    answers: [
+      { text: "Afrique", correct: false },
+      { text: "Asie", correct: false },
+      { text: "Australie", correct: true },
+      { text: "Arctique", correct: false },
+    ],
+  },
 ];
 
-const questionsElement= document.getElementById('question')
-const AnswerButton= document.getElementById('answer_btn')
-const NextButton= document.getElementById('next_btn')
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer_btn");
+const nextButton = document.getElementById("next_btn");
 
-let questionIndex=0;
-let score=0;
-function startQuiz(){
-    questionIndex=0;
-    score=0;
-    NextButton.innerHTML="Next";
-    showquestion()
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Suivant";
+  showQuestion();
 }
 
-function showquestion(){
-    resetState();
-    let currentQuestion=question[questionIndex];
-    let questionNo=questionIndex +1;
-    questionsElement.innerHTML=questionNo + "."+currentQuestion.question;
-    currentQuestion.answers.forEach(Answer =>{
-        const button=document.createElement('button');
-        button.innerHTML=Answer.text;
-        button.classList.add("btn");
-        AnswerButton.appendChild(button);
-        if(Answer.correct){
-            button.dataset.correct=Answer.correct;
-        }
-        button.addEventListener("click",selectAnswer);
-    });
-}
-function  resetState(){
-    NextButton.style.display="none";
-    while(AnswerButton.firstChild){
-        AnswerButton.removeChild(AnswerButton.firstChild)
-    }
+function showQuestion() {
+  resetState();
+  const currentQuestion = questions[currentQuestionIndex];
+  questionElement.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    if (answer.correct) button.dataset.correct = answer.correct;
+    button.addEventListener("click", selectAnswer);
+    answerButtons.appendChild(button);
+  });
 }
 
-function selectAnswer(e){
-    const selectedBtn=e.target;
-    const isCorrect=selectedBtn.dataset.correct==="true";
-    if(isCorrect){
-        selectedBtn.classList.add("correct");
-        score++;
-
-    }else{
-        selectedBtn.classList.add("incorrect");
-    }
-    Array.from(AnswerButton.children).forEach(button => {
-        if(button.dataset.correct==="true"){
-            button.classList.add("correct");
-        }
-        button.disabled=true;
-    });
-    NextButton.style.display="block";
-
+function resetState() {
+  nextButton.style.display = "none";
+  answerButtons.innerHTML = "";
 }
 
-function showScore(){
-    resetState();
-    questionsElement.innerHTML=`you scored ${score} out of ${question.length}!`;
-    NextButton.innerHTML="Play Again";
-    NextButton.style.display="block";
-
-}
-function handleNextBtn(){
-    questionIndex++;
-    if(questionIndex<question.length){
-        showquestion();
-    }else{
-        showScore();
-    }
+function selectAnswer(e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  selectedBtn.classList.add(isCorrect ? "correct" : "incorrect");
+  if (isCorrect) score++;
+  Array.from(answerButtons.children).forEach((button) => {
+    button.disabled = true;
+    if (button.dataset.correct === "true") button.classList.add("correct");
+  });
+  nextButton.style.display = "block";
 }
 
-NextButton.addEventListener("click",()=>{
-    if(questionIndex<question.length){
-        handleNextBtn();
-    }else{
-        startQuiz();
-    }
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `
+    🎉 Bravo ! Vous avez obtenu <strong>${score}</strong> / ${questions.length}.
+  `;
+  nextButton.innerHTML = "Rejouer";
+  nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  if (currentQuestionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
 });
-startQuiz();
 
+startQuiz();

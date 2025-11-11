@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimized Code Verification</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="website icon" href="img.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img.jpg" />
 </head>
 <body>
-    <div class="container">
-        <img src="img1.jpg" alt="">
-        <h3>OTP Verification</h3>
-        <div class="inp">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-        </div>
-        <p>Don't get the code?<a href="#">Resend</a></p>
-        <button>Verify</button>
+  <div class="container">
+    <img src="img1.jpg" alt="Verification Image" />
+    <h3>OTP Verification</h3>
 
+    <div class="otp-inputs">
+      <input type="text" maxlength="1" autofocus />
+      <input type="text" maxlength="1" />
+      <input type="text" maxlength="1" />
+      <input type="text" maxlength="1" />
     </div>
 
+    <p>Didn’t receive the code? <a href="#">Resend</a></p>
 
-    <script src="script.js">  </script>
+    <button id="verifyBtn">Verify</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
