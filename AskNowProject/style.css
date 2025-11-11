@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Outfit' ;
+    background: linear-gradient(white,white);
+    background: url(img.jpg) no-repeat;
+}
+.BoxCommunication{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+.Contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    background: transparent;
+   
+}
+.ContactLeft-Title h2{
+ font-weight:   600;
+ color: rgb(8, 8, 8);
+ font-size: 40px;
+ margin-bottom:5px ;
+}
+.ContactLeft-Title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: rgb(161, 151, 151);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.ContactInput{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: darkgray;
+    border-radius: 50px;
+
+}
+.Contact-left textarea{
+    height: 140px;
+    padding-top:15px ;
+    border-radius: 20px;
+}
+.ContactInput:focus{
+    border: 2px solid blue;
+  
+}
+.ContactInput::placeholder{
+    color: rgb(164, 165, 165);
+}
+.Contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: rgb(18, 18, 19);
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg,rgb(121, 121, 247),rgb(69, 69, 248));
+    cursor: pointer;
+
+    
+}
+@media (max-width:800px) {
+
+    .ContactInput{
+        width: 80vw;
+
+    }
+    
+}

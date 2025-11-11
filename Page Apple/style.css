@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+    background: rgb(92, 90, 88);
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+
+}
+li{
+    list-style: none;
+}
+.logo{
+    color: aliceblue;
+}
+
+li a{
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 120px;
+    position: relative;
+
+}
+.content .text{
+    width: 40%;
+    color: rgb(0, 0, 0);
+
+}
+.content .text h2{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.content .text p{
+    font-size: 18px;
+    margin: 20px 0;
+
+}
+.content .text a{
+    text-decoration: none;
+    background: #fff;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 20px;
+    
+}
+.image img{
+    width: 250px;
+    position: absolute;
+    left: 1150px;
+    top: 30%;
+    
+   
+}
+.content .image img{
+    width: 180px;
+}
+.icons{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.IMG2{
+    padding: 20px;
+}
+.icons img{
+    width: 100px;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.icons img:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}

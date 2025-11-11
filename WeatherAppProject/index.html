@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather today</title>
+    <link rel="website icon" type="png" href="meteo.png">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+
+</head>
+<body>
+    
+       <div class="container">
+             <div class="search-box">
+                <ion-icon name="location"></ion-icon>
+                <input type="text" placeholder="Enter your location">
+                <button  ><ion-icon name="search"></ion-icon></button>
+             </div>
+
+             <div class="not-found">
+                <img src="img.jpg">
+             </div>
+
+             <div class="weatherBox">
+                    <img src="" >
+                    <p class="temperatur"></p>
+                    <p class="description"></p>
+             </div>
+
+             <div class="weatherDetails">
+                <div class="humidity">
+                    <ion-icon name="water"></ion-icon>
+                    <div class="text">
+                        <span></span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
+                <div class="wind">
+                    <ion-icon name="swap-horizontal"></ion-icon>
+                    <div class="text">
+                        <span></span>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+             </div>
+       </div>
+
+       <script
+       src="https://example.com/fontawesome/vVERSION/js/all.js"
+       data-auto-a11y="true"
+     ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
